@@ -135,6 +135,7 @@ b) With schema
 ## Intended usage and useful scenarios
 
 **Derive schema from dataset and use it without dataset  (data generation mode)**
+
 This scenario is very useful when dataset has complex structure and you doesn't want to create schema for it from scratch.
 This can be achieved with the following steps:
 1. Create definition with dataset and apply derived schema;
@@ -144,6 +145,7 @@ This can be achieved with the following steps:
 
 
 **Store state between data processing iterations. Implement counter**
+
 Let's say we would like to create simple counter with the following payload sent to a target system:
 
     {
@@ -168,6 +170,7 @@ On step #5 select "Custom function" rule for the "count" property. Open editor a
 
 
 **Send data to different Kafka topics**:
+
 To send data to different Kafka topics we should create several devices which will override target system properties with their "topic data".
 Lets **generate** data for our example. 
 Go to *Create session* screen, then:
@@ -189,6 +192,7 @@ Go to *Create session* screen, then:
 ----------
 
 **Generate dataset and save it to local minio database**
+
 To generate data and save it as file on local minio database create *Local storage* target system while creating session. Populate *dataset* field with desired file name.
 
 
