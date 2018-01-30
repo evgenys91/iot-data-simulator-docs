@@ -1,6 +1,7 @@
 
 
 
+
 ![enter image description here](https://github.com/evgenys91/iot-data-simulator-docs/blob/master/branding.png?raw=true)
 
 ----------
@@ -55,6 +56,7 @@ If *dataset* is not provided, the data will be generated using *schema*
  
 ##  Usage
 
+
 The simplest use case which can help you to start working with the tool - **replay existing dataset as is**. 
 
 We need to create *session* which will send dataset records without any modification to a target system. For this use case we don't need *schema* - just JS function that will return current dataset record (*datasetEntry*). Go to the *create session* screen, then:
@@ -108,7 +110,7 @@ a) With JS function. Go to *Create session* screen, then:
     function process(state, datasetEntry, deviceName) { 
 	    return {
 	        timestamp: moment().valueOf()
-	    };
+	    }
     }
 
 
@@ -162,11 +164,47 @@ On step #5 select "Custom function" rule for the "count" property. Open editor a
     }
 
 
+----------
+
+
 **Send data to different Kafka topics**:
-In progress
+To send data to different Kafka topics we should create several devices which will override target system properties with their "topic data".
+Lets **generate** data for our example. 
+Go to *Create session* screen, then:
+
+   1. Create data definition without dataset and with simple schema;
+   2. Select timer options
+   3. Go to "Create device" screen, enter device name and press "Proceed".
+   4. You should see *target system* screen that is specific for this device. Go to *Create target system* screen;
+   5. Enter *target system* name and select "Kafka" type. 
+   6. Populate only *topic* field with "Kafka" topic corresponding to this device. When creating device specific target system, only populated fields will override session target system properties.
+   7. Repeat steps 3 - 6 for all Kafka topics
+   8. Select all devices on *Select devices* step of session creation flow and press "Proceed";
+   9. Select device injection rule. Please, read more about device injection rules in project Gitbook;
+   10. Apply processing rules.
+   11. Create or select Kafka target system (*topic* should be filled, but anyway it will be overwritten by devices specific target systems *topic* parameter;
+   12. Enter session name and complete session creation flow;
+   13. Run created session and observe session console;
+
+----------
 
 **Generate dataset and save it to local minio database**
-In progress
+To generate data and save it as file on local minio database create *Local storage* target system while creating session. Populate *dataset* field with desired file name.
+
+
+----------
+
+**Inject device property to processing rules**
+
+ Go to *Create session* screen, then:
+  
+ 1. Select data definition with schema
+ 2. Select timer options
+ 3. Create one or more devices with populated properties fields
+ 4. Select created devices
+ 5. Select device injection rule
+ 6. On *processing rules* step select *Device property* rule for specific property that you would like to overwrite with device property;
+ 7. Complete session creation flow
 
 
 ## Supported target systems
@@ -187,8 +225,7 @@ IoT-data-simulator can send payload to the following *target systems* (with avai
 A: Session parameters are updated only when session is stopped. If session was paused, it will still use the previous parameters;
 
 **Q: What IoT platforms do you support?**
-A: We're not actually supporting any IoT platform, but with supported target systems and security types we managed to test IoT data simulator
-with Thingsboard, AWS, Predix and DSH platforms.
+A: We're not actually supporting any IoT platform, but with supported target systems and security types we managed to test IoT data simulator on Thingsboard, AWS, Predix and DSH platforms.
 
 ## Motivation
 
