@@ -50,8 +50,8 @@ If *dataset* is provided, its content is replayed by the tool during session run
  - **target system** - describes external system where simulated data is sent to;
  
  - **device** – encapsulates specific set of values and target system properties. 
-	 - Devices can be used to override specific values in generated payload. This can be usefull when you have common payload structure and would like to ovveride some specific properties such as *id*, *geo position* for different IoT devices.
-	 - Devices can be used to override *target system* properties. This scenario is helpful for instance when each device should send payload to its own topic.
+	 - Devices can be used to override specific values in generated payload. It can be useful when you have common payload structure and would like to ovveride some specific properties such as *id*, *geo position* for different IoT devices.
+	 - Devices can be used to override *target system* properties. This use case is helpful for instance when each device should send payload to its own topic.
  
 ##  Usage
 
