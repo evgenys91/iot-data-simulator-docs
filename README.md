@@ -1,8 +1,6 @@
 
 
-
-
-![enter image description here](https://github.com/evgenys91/iot-data-simulator-docs/blob/master/branding.png?raw=true)
+![enter image description here](https://github.com/evgenys91/iot-data-simulator-docs/blob/master/logo.png?raw=true)
 
 ----------
 IoT-data-simulator is the tool which allows you to simulate IoT devices data with great flexibility. With this tool you won't need to code another new simulator for each IoT project.
