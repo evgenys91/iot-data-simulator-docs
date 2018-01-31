@@ -79,7 +79,7 @@ Session will stop when all records from dataset will be read.
 
 Replaying dataset without modifying any parameters is not really useful use case, so let's **replay dataset with updated date/timestamp properties**. Go to *create session* screen, then:
 
-   1. Upload dataset which has at least one date/timestamp property on *create definition* screen. Make sure that date/timestamp property type has been derived correctly and apply *schema* it. Dataset may look like the following:
+   1. Upload dataset which has at least one date/timestamp property on *create definition* screen. Make sure that date/timestamp property type has been derived correctly and apply *schema*. Dataset may look like the following:
    
 
     {"timestamp": 1517303155600, "id": 1 }
