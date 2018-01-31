@@ -1,5 +1,6 @@
 
 
+
 ![enter image description here](https://github.com/evgenys91/iot-data-simulator-docs/blob/master/branding.png?raw=true)
 
 ----------
@@ -53,8 +54,9 @@ If *dataset* is provided, its content is replayed by the tool during session run
  
 ##  Usage
 
+**Replay existing dataset as is**
 
-The simplest use case which can help you to start working with the tool - **replay existing dataset as is**. 
+The simplest use case which can help you to start working with the tool - replay existing dataset as is. 
 
 We need to create *session* which will send dataset records without any modification to a target system. For this use case we don't need data *schema* - just JS function that will return current dataset record (*datasetEntry*). Go to the *create session* screen, then:
 
@@ -75,7 +77,9 @@ Session will stop when all records from dataset will be read.
 
 ----------
 
-Replaying dataset without modifying any parameters is not really useful use case, so let's **replay dataset with updated date/timestamp properties**. Go to *create session* screen, then:
+**Replay dataset with updated date/timestamp properties**
+
+Replaying dataset without modifying any parameters is not really useful use case, so let's replay dataset with updated date/timestamp properties. Go to *create session* screen, then:
 
    1. Upload dataset which has at least one date/timestamp property on *create definition* screen. Make sure that date/timestamp property type has been derived correctly and apply *schema*. Dataset may look like the following:
    
@@ -95,7 +99,9 @@ Replaying dataset without modifying any parameters is not really useful use case
 
 ---------
 
-If you would like to **generate** data on fly. This can be achieved in two possible ways:
+**Generate data**
+
+If you would like to generate data on fly. This can be achieved in two possible ways:
 
 a) With JS function. Go to *Create session* screen, then:
 
